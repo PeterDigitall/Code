@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactividad con JavaScript</title>
+<style>
+    #punto {
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div id="punto"></div>
+
+<script>
+// Obtener el elemento del punto azul
+var punto = document.getElementById("punto");
+
+// Función para mover el punto azul aleatoriamente en la pantalla
+function moverPunto() {
+    var posX = Math.floor(Math.random() * (window.innerWidth - 20));
+    var posY = Math.floor(Math.random() * (window.innerHeight - 20));
+    punto.style.left = posX + "px";
+    punto.style.top = posY + "px";
+}
+
+// Agregar evento de clic al punto azul
+punto.addEventListener("click", function() {
+    // Redirigir al usuario a https://www.digit-all.mx
+    window.location.href = "https://www.digit-all.mx";
+});
+
+// Mover el punto azul aleatoriamente cada 3 segundos
+setInterval(moverPunto, 3000);
+</script>
+</body>
+</html>
